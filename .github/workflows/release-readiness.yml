@@ -1,0 +1,28 @@
+name: Release Readiness
+
+on:
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+    inputs:
+      package:
+        description: "Optional crate name to validate"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  release-readiness:
+    name: Metadata and docs completeness
+    runs-on: ubuntu-latest
+    env:
+      PACKAGE: ${{ github.event.inputs.package }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Run docs quality check
+        run: bash scripts/ci/docs_quality_check.sh
+      - name: Run release readiness checks
+        run: bash scripts/release/release_readiness_check.sh "${PACKAGE}"

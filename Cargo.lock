@@ -7,5 +7,201 @@ name = "agent-chain"
 version = "0.1.0"
 
 [[package]]
+name = "ai-agent-chain"
+version = "0.1.0"
+
+[[package]]
+name = "ai-agent-checkpoint"
+version = "0.1.0"
+
+[[package]]
+name = "ai-agent-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-agent-graph"
+version = "0.1.0"
+
+[[package]]
+name = "ai-agent-memory"
+version = "0.1.0"
+
+[[package]]
+name = "ai-agent-tools"
+version = "0.1.0"
+
+[[package]]
+name = "ai-chunking"
+version = "0.1.0"
+
+[[package]]
+name = "ai-cloud-aws"
+version = "0.1.0"
+
+[[package]]
+name = "ai-cloud-azure"
+version = "0.1.0"
+
+[[package]]
+name = "ai-cloud-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-cloud-gcp"
+version = "0.1.0"
+
+[[package]]
+name = "ai-dataframe-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-dataframe-io"
+version = "0.1.0"
+
+[[package]]
+name = "ai-embed-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-experiment-tracking"
+version = "0.1.0"
+
+[[package]]
+name = "ai-feature-pipeline"
+version = "0.1.0"
+
+[[package]]
+name = "ai-guardrails-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-guardrails-pii"
+version = "0.1.0"
+
+[[package]]
+name = "ai-ingest-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-llm-anthropic"
+version = "0.1.0"
+
+[[package]]
+name = "ai-llm-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-llm-gemini"
+version = "0.1.0"
+
+[[package]]
+name = "ai-llm-openai"
+version = "0.1.0"
+
+[[package]]
+name = "ai-llm-router"
+version = "0.1.0"
+
+[[package]]
+name = "ai-ml-estimator"
+version = "0.1.0"
+
+[[package]]
+name = "ai-ml-metrics"
+version = "0.1.0"
+
+[[package]]
+name = "ai-model-artifacts"
+version = "0.1.0"
+
+[[package]]
+name = "ai-model-registry"
+version = "0.1.0"
+
+[[package]]
+name = "ai-observe-evals"
+version = "0.1.0"
+
+[[package]]
+name = "ai-observe-metrics"
+version = "0.1.0"
+
+[[package]]
+name = "ai-observe-tracing"
+version = "0.1.0"
+
+[[package]]
+name = "ai-prompt-template"
+version = "0.1.0"
+
+[[package]]
+name = "ai-rerank-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-retrieval-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-schema-output"
+version = "0.1.0"
+
+[[package]]
+name = "ai-secrets-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-serving-batch"
+version = "0.1.0"
+
+[[package]]
+name = "ai-serving-gateway"
+version = "0.1.0"
+
+[[package]]
+name = "ai-serving-http"
+version = "0.1.0"
+
+[[package]]
+name = "ai-serving-websocket"
+version = "0.1.0"
+
+[[package]]
+name = "ai-store-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-store-sql"
+version = "0.1.0"
+
+[[package]]
+name = "ai-store-vector-meta"
+version = "0.1.0"
+
+[[package]]
+name = "ai-vector-core"
+version = "0.1.0"
+
+[[package]]
+name = "ai-vector-pgvector"
+version = "0.1.0"
+
+[[package]]
+name = "ai-vector-qdrant"
+version = "0.1.0"
+
+[[package]]
+name = "ai-vector-weaviate"
+version = "0.1.0"
+
+[[package]]
+name = "ai-workflow-jobs"
+version = "0.1.0"
+
+[[package]]
+name = "ai-workflow-state"
+version = "0.1.0"
+
+[[package]]
 name = "rust"
 version = "0.1.0"

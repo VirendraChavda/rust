@@ -1,0 +1,9 @@
+﻿[package]
+name = "ai-prompt-template"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Prompt templating and schema rendering"
+
+[lib]
+path = "src/lib.rs"

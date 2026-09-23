@@ -1,0 +1,9 @@
+﻿[package]
+name = "ai-guardrails-core"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Safety and policy validation contracts"
+
+[lib]
+path = "src/lib.rs"
