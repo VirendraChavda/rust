@@ -10,7 +10,7 @@ This policy defines baseline standards for all crates in this workspace.
 
 ## MSRV
 
-- Workspace Minimum Supported Rust Version (MSRV): 1.84.0.
+- Workspace Minimum Supported Rust Version (MSRV): 1.85.0.
 - Raise MSRV only with changelog entry and release notes.
 - CI must validate on stable and MSRV where possible.
 
