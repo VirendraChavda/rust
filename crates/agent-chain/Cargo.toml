@@ -1,0 +1,12 @@
+[package]
+name = "agent-chain"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Composable chain primitives for Rust AI backends"
+repository = "https://github.com/VirendraChavda/rust"
+readme = "README.md"
+keywords = ["ai", "llm", "agent", "chain"]
+categories = ["development-tools"]
+
+[dependencies]

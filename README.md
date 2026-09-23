@@ -8,7 +8,9 @@ This repository is configured as a Cargo workspace for multi-crate development.
 
 - Workspace root: `/home/runner/work/rust/rust/Cargo.toml`
 - Crates directory: `/home/runner/work/rust/rust/crates/*`
-- Current crate: `/home/runner/work/rust/rust/crates/rust`
+- Crates currently included:
+  - `/home/runner/work/rust/rust/crates/rust`
+  - `/home/runner/work/rust/rust/crates/agent-chain`
 
 You can add more crates under `crates/` and version/publish them independently.
 
