@@ -4,6 +4,11 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      package:
+        description: "Workspace package name to publish"
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -25,14 +30,33 @@ jobs:
       - name: Run pre-commit hooks
         run: pre-commit run --all-files
       - name: Run tests
-        run: cargo test
+        run: cargo test --workspace
 
   publish:
     name: Publish Crate
     needs: test
     runs-on: ubuntu-latest
+    env:
+      MANUAL_PACKAGE: ${{ github.event.inputs.package }}
+      RELEASE_TAG: ${{ github.event.release.tag_name }}
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
+      - name: Resolve package name
+        id: package
+        shell: bash
+        run: |
+          if [[ -n "${MANUAL_PACKAGE}" ]]; then
+            echo "name=${MANUAL_PACKAGE}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [[ -n "${RELEASE_TAG}" && "${RELEASE_TAG}" == *"-v"* ]]; then
+            echo "name=${RELEASE_TAG%-v*}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "Unable to determine package name. Use workflow_dispatch with package input or release tags in '<package>-v<version>' format."
+          exit 1
       - name: Publish to crates.io
-        run: cargo publish --token "${{ secrets.CRATES_IO_TOKEN }}"
+        run: cargo publish -p "${{ steps.package.outputs.name }}" --token "${{ secrets.CRATES_IO_TOKEN }}"
