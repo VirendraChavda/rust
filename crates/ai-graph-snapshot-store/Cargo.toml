@@ -1,0 +1,13 @@
+[package]
+name = "ai-graph-snapshot-store"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Snapshot storage contracts"
+repository = "https://github.com/VirendraChavda/rust"
+readme = "README.md"
+keywords = ["ai", "backend", "rust"]
+categories = ["development-tools"]
+
+[dependencies]
+ai-graph-core = { version = "0.1.0", path = "../ai-graph-core" }

@@ -1,0 +1,12 @@
+[package]
+name = "ai-retrieval-query-rewrite"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Query rewrite and expansion"
+repository = "https://github.com/VirendraChavda/rust"
+readme = "README.md"
+keywords = ["ai", "backend", "rust"]
+categories = ["development-tools"]
+
+[dependencies]

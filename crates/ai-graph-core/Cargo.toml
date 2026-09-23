@@ -1,0 +1,24 @@
+[package]
+name = "ai-graph-core"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Graph execution core contracts"
+repository = "https://github.com/VirendraChavda/rust"
+readme = "README.md"
+keywords = ["ai", "backend", "rust"]
+categories = ["development-tools"]
+
+[dependencies]
+
+[dev-dependencies]
+ai-dag-planner = { version = "0.1.0", path = "../ai-dag-planner" }
+ai-cycle-detector = { version = "0.1.0", path = "../ai-cycle-detector" }
+ai-fixed-point-engine = { version = "0.1.0", path = "../ai-fixed-point-engine" }
+ai-graph-executor = { version = "0.1.0", path = "../ai-graph-executor" }
+ai-graph-replay-trace = { version = "0.1.0", path = "../ai-graph-replay-trace" }
+criterion = "0.5"
+
+[[bench]]
+name = "runtime_path"
+harness = false

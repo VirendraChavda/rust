@@ -1,0 +1,9 @@
+﻿[package]
+name = "ai-serving-websocket"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Websocket streaming transport"
+
+[lib]
+path = "src/lib.rs"

@@ -1,0 +1,9 @@
+﻿[package]
+name = "ai-llm-anthropic"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Anthropic adapter"
+
+[lib]
+path = "src/lib.rs"

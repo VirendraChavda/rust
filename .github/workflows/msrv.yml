@@ -1,0 +1,27 @@
+name: MSRV and Stable Checks
+
+on:
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rust-checks:
+    name: ${{ matrix.toolchain }} checks
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        toolchain: ["1.85.0", "stable"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@02cb101ec7c40f2c49e1d9714d64511d8e1b74de
+        with:
+          toolchain: ${{ matrix.toolchain }}
+      - name: cargo check
+        run: cargo check --workspace --all-targets
+      - name: cargo test
+        run: cargo test --workspace

@@ -1,0 +1,9 @@
+﻿[package]
+name = "ai-dataframe-core"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Tabular data model and expression engine"
+
+[lib]
+path = "src/lib.rs"
