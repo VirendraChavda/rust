@@ -7,6 +7,7 @@ if ! command -v cargo-fuzz >/dev/null 2>&1; then
 fi
 
 FOUND=0
+shopt -s nullglob
 for manifest in crates/*/fuzz/Cargo.toml; do
   crate_dir="$(dirname "$(dirname "$manifest")")"
   crate_name="$(basename "$crate_dir")"
