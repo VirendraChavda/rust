@@ -1,7 +1,7 @@
 Run full crate ship workflow.
 
-Input:
-$ARGUMENTS
+Task source:
+- Read `.claude/task.md` and execute ship stages for that scope.
 
 Stages:
 1. /spec for remaining scope ambiguity.

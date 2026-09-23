@@ -1,7 +1,7 @@
 Review parity-readiness for this module family and claimed maturity level.
 
-Input:
-$ARGUMENTS
+Task source:
+- Read `.claude/task.md` and review against declared target maturity in task metadata/scope.
 
 Output:
 1. findings by severity

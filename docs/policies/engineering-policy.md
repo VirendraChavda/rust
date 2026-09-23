@@ -14,6 +14,13 @@ This policy defines baseline standards for all crates in this workspace.
 - Raise MSRV only with changelog entry and release notes.
 - CI must validate on stable and MSRV where possible.
 
+## Platform strategy
+
+- Primary release target: Linux (EKS-aligned runtime).
+- Required release gates are Linux-based checks and release-readiness validation.
+- Secondary compatibility target: Windows MSVC.
+- Windows checks validate cross-platform compatibility but are not the primary release artifact source.
+
 ## Crate maturity levels
 
 - experimental: API may change frequently.
@@ -48,3 +55,4 @@ A release is blocked if any of the following fail:
 - License policy checks.
 - Release-readiness checks.
 - API stability checks for published crates.
+- Linux release-path checks.

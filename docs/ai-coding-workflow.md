@@ -7,14 +7,54 @@ This document standardizes how to use GitHub Copilot and Claude Code in this wor
 - Consistent crate architecture and API quality
 - Predictable validation before merge or publish
 
+## Platform strategy
+- Primary path: Linux/WSL for release-grade builds and tests (EKS aligned).
+- Secondary path: Windows MSVC compatibility checks.
+- Release artifacts should be produced from Linux pipeline.
+
 ## Shared quality gate
 Always run one of these before finalizing substantial changes:
 
 - Bash: `bash scripts/ci/full_check.sh`
 - PowerShell: `./scripts/ci/full_check.ps1`
 
+Release-path Linux check:
+
+- `bash scripts/ci/linux_release_check.sh`
+
+Windows compatibility check:
+
+- `./scripts/ci/windows_compat_check.ps1`
+- `./scripts/ci/run_windows_compat_with_msvc.ps1` (auto-loads MSVC tools)
+
+## Autonomous Agentic Build Mode
+Use this mode when requesting end-to-end agentic, AI, or backend workflows where crate coverage may be incomplete.
+
+Execution loop:
+1. Implement in existing crates when possible.
+2. If required capability crates are missing, bootstrap them using the relevant `scripts/dev/bootstrap_*.ps1` or `.sh` script.
+3. Add a minimal vertical slice API and tests in the new/updated crates.
+4. Re-run validation and continue iterating until requested behavior is implemented or a concrete blocker is found.
+
+Prompting pattern for both Copilot and Claude:
+- "Implement <workflow>. If required Rust crates are missing, create/update them and continue until validation passes."
+
+## Install requirements
+
+### Linux/WSL path (recommended)
+- WSL2 with Ubuntu (or equivalent Linux distro)
+- Rust via rustup
+- Build essentials: gcc, g++, make, pkg-config
+- Optional: clang and lld
+
+### Windows MSVC compatibility path
+- Rust via rustup (`stable-x86_64-pc-windows-msvc`)
+- Visual Studio Build Tools with Desktop development with C++ workload
+- Use Developer PowerShell when running MSVC-based builds locally
+
 Additional specialized checks:
 
+- Preflight environment: `bash scripts/ci/preflight_check.sh` or `./scripts/ci/preflight_check.ps1`
 - Reliability: `bash scripts/ci/reliability_check.sh` or `./scripts/ci/reliability_check.ps1`
 - API stability: `bash scripts/ci/api_stability_check.sh` or `./scripts/ci/api_stability_check.ps1`
 - Docs quality: `bash scripts/ci/docs_quality_check.sh` or `./scripts/ci/docs_quality_check.ps1`
@@ -23,6 +63,7 @@ Additional specialized checks:
 
 ## GitHub Copilot setup (already committed)
 - Project instructions: `.github/copilot-instructions.md`
+- Task source file: `.github/task.md`
 - File-scoped instructions:
   - `.github/instructions/rust-workspace.instructions.md`
   - `.github/instructions/rust-testing.instructions.md`
@@ -60,6 +101,7 @@ Additional specialized checks:
 
 ## Claude Code setup (already committed)
 - Project instruction file: `CLAUDE.md`
+- Task source file: `.claude/task.md`
 - Command prompts:
   - `.claude/commands/spec.md`
   - `.claude/commands/implement.md`
@@ -102,6 +144,10 @@ Additional specialized checks:
 - Python-to-Rust context map: `docs/knowledge/python-to-rust-module-context.md`
 - Maturity tracking matrix: `docs/roadmaps/module-parity-matrix.md`
 - Full parity module manifest: `docs/roadmaps/parity-module-manifest.md`
+- Extended Python backend essentials manifest: `docs/roadmaps/python-ai-backend-essential-manifest.md`
+- State machine and backend gap manifest: `docs/roadmaps/state-machine-and-backend-gap-manifest.md`
+- Prompt and output pipeline manifest: `docs/roadmaps/prompt-and-output-pipeline-manifest.md`
+- DAG and cyclic execution gap manifest: `docs/roadmaps/dag-and-cyclic-execution-gap-manifest.md`
 
 ## Automation layers
 - Dependency updates:
@@ -138,6 +184,18 @@ Additional specialized checks:
 - Full parity module bootstrap:
   - Bash: `bash scripts/dev/bootstrap_parity_modules.sh`
   - PowerShell: `./scripts/dev/bootstrap_parity_modules.ps1`
+- Extended Python backend essentials bootstrap:
+  - Bash: `bash scripts/dev/bootstrap_python_backend_essentials.sh`
+  - PowerShell: `./scripts/dev/bootstrap_python_backend_essentials.ps1`
+- State machine and backend gaps bootstrap:
+  - Bash: `bash scripts/dev/bootstrap_state_and_backend_gaps.sh`
+  - PowerShell: `./scripts/dev/bootstrap_state_and_backend_gaps.ps1`
+- Prompt and output pipeline bootstrap:
+  - Bash: `bash scripts/dev/bootstrap_prompt_and_output_pipeline.sh`
+  - PowerShell: `./scripts/dev/bootstrap_prompt_and_output_pipeline.ps1`
+- DAG and cyclic execution gaps bootstrap:
+  - Bash: `bash scripts/dev/bootstrap_dag_and_cyclic_execution_gaps.sh`
+  - PowerShell: `./scripts/dev/bootstrap_dag_and_cyclic_execution_gaps.ps1`
 
 ## Orchestration
 - Stage model and stop conditions: `docs/agent-orchestration.md`

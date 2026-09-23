@@ -1,0 +1,20 @@
+name: Windows MSVC Compatibility
+
+on:
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-compat:
+    name: Windows MSVC compatibility checks
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Run Windows compatibility checks
+        shell: pwsh
+        run: ./scripts/ci/windows_compat_check.ps1

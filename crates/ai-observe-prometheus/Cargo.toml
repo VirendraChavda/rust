@@ -1,0 +1,12 @@
+[package]
+name = "ai-observe-prometheus"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Prometheus metrics exporter"
+repository = "https://github.com/VirendraChavda/rust"
+readme = "README.md"
+keywords = ["ai", "backend", "rust"]
+categories = ["development-tools"]
+
+[dependencies]

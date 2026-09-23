@@ -1,7 +1,7 @@
 Analyze parity gap for this Rust module scope against Python ecosystem expectations.
 
-Input:
-$ARGUMENTS
+Task source:
+- Read `.claude/task.md` and use `Objective` plus `Scope` as analysis input.
 
 Use:
 - docs/knowledge/python-to-rust-module-context.md

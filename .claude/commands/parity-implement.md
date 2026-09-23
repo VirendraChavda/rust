@@ -1,7 +1,7 @@
 Implement one parity milestone for this module scope.
 
-Input:
-$ARGUMENTS
+Task source:
+- Read `.claude/task.md` and implement the highest-priority milestone in scope.
 
 Requirements:
 1. keep change set focused to one milestone

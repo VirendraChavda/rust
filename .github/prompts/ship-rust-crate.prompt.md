@@ -2,14 +2,17 @@
 name: "Ship Rust Crate"
 description: "Run staged orchestration: spec, implement, verify, review, and release-readiness for a crate scope"
 agent: "Rust Release Manager"
-argument-hint: "Crate name and release scope"
+argument-hint: "Unused; define task in .github/task.md"
 ---
 
 Run the full release orchestration for this scope:
 
-{{input}}
+Task source:
+
+- Read `.github/task.md` and execute the orchestration for that scope.
 
 Stages:
+
 1. Confirm acceptance criteria and release scope.
 2. Verify implementation and tests are complete.
 3. Run quality gates and reliability checks.

@@ -5,7 +5,16 @@ Thanks for contributing to this Rust AI backend workspace.
 ## Development prerequisites
 
 - Rust toolchain
+- Linux/WSL toolchain for primary release-path development:
+  - WSL2 + Ubuntu (or Linux host)
+  - gcc, g++, make, pkg-config
+- Optional Windows compatibility toolchain:
+  - Visual Studio Build Tools with C++ toolchain (provides `link.exe`)
 - Optional: pre-commit for local checks
+
+If tests fail with linker errors on Windows, open a Developer PowerShell session where `link.exe` is available.
+
+Primary recommendation for EKS deployments: run full checks in Linux/WSL.
 
 Install hooks:
 
@@ -26,6 +35,15 @@ Or use:
 
 - `scripts/ci/full_check.sh`
 - `scripts/ci/full_check.ps1`
+
+For release-path validation (Linux/WSL):
+
+- `scripts/ci/linux_release_check.sh`
+
+For Windows compatibility validation:
+
+- `scripts/ci/windows_compat_check.ps1`
+- `scripts/ci/run_windows_compat_with_msvc.ps1` (auto-loads MSVC environment)
 
 ## Additional quality layers
 

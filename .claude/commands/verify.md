@@ -2,8 +2,8 @@ Run full workspace validation for Rust crates and summarize outcome.
 
 If specific crate scope is provided, validate that crate first and then workspace-wide if requested.
 
-Input:
-$ARGUMENTS
+Task source:
+- Read `.claude/task.md` and derive scope from `Crate Targets` and `Validation Plan`.
 
 Commands:
 1. cargo fmt --all -- --check

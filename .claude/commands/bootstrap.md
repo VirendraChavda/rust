@@ -1,10 +1,10 @@
 Bootstrap a new AI-focused Rust crate.
 
-Input:
-$ARGUMENTS
+Task source:
+- Read `.claude/task.md` and use `Crate Targets` plus `Objective` to determine crate name and description.
 
 Steps:
-1. Parse crate name and description from input.
+1. Parse crate name and description from `.claude/task.md`.
 2. Run:
    - PowerShell: ./scripts/dev/new_ai_crate.ps1 -Name <crate-name> -Description "<description>"
    - Bash: bash scripts/dev/new_ai_crate.sh <crate-name> "<description>"

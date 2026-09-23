@@ -1,7 +1,7 @@
 Run release-readiness checks before publish.
 
-Input:
-$ARGUMENTS
+Task source:
+- Read `.claude/task.md` and derive release scope from `Crate Targets` and `Acceptance Criteria`.
 
 Steps:
 1. If a crate name is provided, run checks for that crate only.

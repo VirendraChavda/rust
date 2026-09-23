@@ -1,7 +1,7 @@
 Bootstrap full Rust AI parity module scaffold.
 
-Input:
-$ARGUMENTS
+Task source:
+- Read `.claude/task.md` and apply optional family filters from `Scope`.
 
 Steps:
 1. Run PowerShell: ./scripts/dev/bootstrap_parity_modules.ps1

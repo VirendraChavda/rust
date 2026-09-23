@@ -1,6 +1,7 @@
-Create a technical specification for this Rust AI backend request:
+Create a technical specification for the task defined in `.claude/task.md`.
 
-$ARGUMENTS
+Task source:
+- Read `.claude/task.md` first and use it as the authoritative scope and acceptance criteria.
 
 Return:
 1. Problem statement and scope

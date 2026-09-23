@@ -1,6 +1,7 @@
-Perform a strict code review for this Rust change:
+Perform a strict code review for the Rust change described in `.claude/task.md`.
 
-$ARGUMENTS
+Task source:
+- Read `.claude/task.md` first and use its objective, scope, and acceptance criteria.
 
 Review priorities:
 1. Bugs and regressions
