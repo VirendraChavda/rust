@@ -17,7 +17,7 @@ ai-cycle-detector = { version = "0.1.0", path = "../ai-cycle-detector" }
 ai-fixed-point-engine = { version = "0.1.0", path = "../ai-fixed-point-engine" }
 ai-graph-executor = { version = "0.1.0", path = "../ai-graph-executor" }
 ai-graph-replay-trace = { version = "0.1.0", path = "../ai-graph-replay-trace" }
-criterion = "0.5"
+criterion = "0.8"
 
 [[bench]]
 name = "runtime_path"
