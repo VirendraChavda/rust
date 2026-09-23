@@ -10,4 +10,4 @@ keywords = ["ai", "backend", "rust"]
 categories = ["development-tools"]
 
 [dependencies]
-ai-graph-core = { path = "../ai-graph-core" }
+ai-graph-core = { version = "0.1.0", path = "../ai-graph-core" }
