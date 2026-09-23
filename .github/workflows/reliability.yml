@@ -13,7 +13,7 @@ jobs:
     name: Test and Bench Reliability
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
       - name: Run reliability checks
         run: bash scripts/ci/reliability_check.sh

@@ -18,7 +18,7 @@ jobs:
     name: Run Tests and Quality Checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt, clippy
@@ -40,7 +40,7 @@ jobs:
       MANUAL_PACKAGE: ${{ github.event.inputs.package }}
       RELEASE_TAG: ${{ github.event.release.tag_name }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
       - name: Resolve package name
         id: package
